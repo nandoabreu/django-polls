@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+    {% for choice in question.choice_set.all %}
+    <li>
+        <div style="float: left;">{{ choice.choice_text }}</div>
+        <div style="float: right; text-align: right; margin-left: 10px; font-family: monospace;">
+            {{ choice.votes }} vote{% if choice.votes > 1 %}s{% else %}&nbsp;{% endif %}</div>
+    </li>{% endfor %}
+</ul>
+
+<br />
+<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
