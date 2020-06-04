@@ -120,7 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = '/tmp/static' # The PATH from where to serve ('python manage.py collectstatic --noinput' will copy static files here).
-STATIC_URL = '/static/' # The URL to be used from the webserver, pointing to STATIC_ROOT. project/settings.py must have a '+ static' statement to instruct nginx.
+STATIC_ROOT = os.path.join(BASE_DIR, '../static') # The PATH from where to serve (collectstatic will copy static files here).
+STATIC_URL = '/static/' # The URL to be used from the webserver, pointing to STATIC_ROOT.
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),) # Additional paths with static files.
 
