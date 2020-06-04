@@ -50,8 +50,8 @@ http://localhost:8080/
 ```
 
 **Deploy the application in AWS Elastic Beanstalk**  
-> Check prerequisites and commands from [Deploying a Django application](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html#python-django-deploy).
-> Because of the sqlite version in Python 3.6 in Amazon Linux [1], we will deploy in Amazon Linux 2 with Python 3.7.
+> Check prerequisites and commands from [Deploying a Django application](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html#python-django-deploy).  
+> Because of the sqlite version in Python 3.6 in Amazon Linux, we will deploy in Amazon Linux **2** with Python 3.7.
 
     $ eb init -p python-3.7 django-poll --region us-east-2
     $ eb init
