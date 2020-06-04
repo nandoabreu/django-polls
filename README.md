@@ -1,12 +1,10 @@
-# Django Polls exercise
+# Django Polls
 
 ![Project Logo](docs/static/images/64x64.png "Project Logo")
 
-This project was developed for fun and training during Covid's quarenteen. 
-It implements a polling web application.  
-The base for this project can be found 
-[here](https://docs.djangoproject.com/pt-br/1.11/intro/tutorial01/). 
-This solution was improved since the tutorial.
+This project was developed for fun and training and implements a simple polling web application.  
+'[Writing your first Django app](https://docs.djangoproject.com/en/1.11/intro/tutorial01/)' 
+is where this exercise starts at. Still playing, so I don't know where it ends.
 
 ## Development
 
@@ -15,20 +13,51 @@ with Python 3.6 and virtualenv, using Django and SQLite.
 
 ## Dependencies
 
-Python 3.6
-Python pip 20.1.1
+Python 3.6  
+Python pip 20.1.1  
 \+ requirements.txt
 
-## Instructions
+## Instructions  
+
+**Clone and enter this project:**  
+
+    $ git clone https://github.com/nandoabreu/django-poll.git
+    $ cd django-poll
 
 **Initialize virtualenv:**
 
     $ virtualenv .venv
     $ source .venv/bin/activate
 
-**Install project's requirements:**
+**Install requirements:**
 
     $ pip install -r requirements.txt
+
+**Start the server:**  
+
+    $ python manage.py runserver 0:8080
+
+**Login admin console to update Questions:**  
+```
+http://localhost:8080/admin  
+Username: admin  
+Password: poll2020
+```
+
+**Browse the poll:**  
+```
+http://localhost:8080/  
+```
+
+**Deploy the application in AWS Elastic Beanstalk**  
+> Check prerequisites and commands from [Deploying a Django application](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html#python-django-deploy).
+> Because of the sqlite version in Python 3.6 in Amazon Linux [1], we will deploy in Amazon Linux 2 with Python 3.7.
+
+    $ eb init -p python-3.7 django-poll --region us-east-2
+    $ eb init
+    $ eb create django-poll-env
+    $ echo http://$(eb status | grep CNAME | sed 's/.*: //')
+    $ eb open
 
 <!--
 **Check if 'task/data/config.py' exists. If doesn't, copy from 'task/data/config.py.tpl':**
@@ -39,18 +68,7 @@ Python pip 20.1.1
 &#x1F538; *SQLite database will be replaced, if exists.*
 
     $ python task/sqlite3_prepare_and_transfer_data.py
-
-**Serve the database data in a web application:**  
-&#x1F539; *Run the next line and browse http on port 8080 (default).*
-
-    $ python task/web_application.py 8080
 -->
-
-**Browse http to Django's admin console to update polls and choices:**  
-&#x1F539; [http://localhost:8080/admin](http://localhost:8080/admin)  
-
-**Browse http at the used port to start application:**  
-&#x1F539; [http://localhost:8080/](http://localhost:8080/)  
 
 ## Information
 
