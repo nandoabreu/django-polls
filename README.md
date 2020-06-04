@@ -32,7 +32,7 @@ EB CLI 3.18.1
 
 **Clone and enter this project:**  
 
-    $ git clone https://github.com/nandoabreu/django-poll.git
+    $ git clone https://github.com/nandoabreu/django-polls.git
     $ cd django-poll
 
 **Initialize virtualenv:**
