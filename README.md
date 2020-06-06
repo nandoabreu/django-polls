@@ -66,9 +66,9 @@ http://localhost:8080/
 > Because of the sqlite module version in Amazon Linux, we will deploy 
 this solution in Amazon Linux **2** with Python 3.7.
 
-    $ eb init -p python-3.7 django-poll --region us-east-2
+    $ eb init -p python-3.7 django-polls --region us-east-2
     $ eb init
-    $ eb create django-poll-env
+    $ eb create django-polls-env
     $ echo http://$(eb status | grep CNAME | sed 's/.*: //')
     $ eb open
 
